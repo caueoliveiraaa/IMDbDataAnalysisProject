@@ -4,6 +4,10 @@ WORKDIR /app
 
 COPY ./website /app
 
-RUN python -m pip install --upgrade pip && pip install -r requirements.txt
+RUN python -m pip install --upgrade pip
 
-ENTRYPOINT [ "streamlit", "run", "main.py" , "--server.port", "8080"]
+RUN pip install -r requirements.txt
+
+EXPOSE 8501
+
+ENTRYPOINT [ "streamlit", "run", "main.py" , "--server.port=8501", "--server.address=0.0.0.0"]
