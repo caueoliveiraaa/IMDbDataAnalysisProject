@@ -32,7 +32,6 @@ class Program:
         print(soup)
         st.write(soup)
         
-        
 
 if __name__ == '__main__':
     Program.main()
