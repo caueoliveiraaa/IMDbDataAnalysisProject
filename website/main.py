@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from scrapping import scrapping
+
 
 class Program:
     def main():
@@ -27,10 +27,6 @@ class Program:
             np.random.randn(10, 20),
             columns=('col %d' % i for i in range(20)))
         st.dataframe(dataframe2.style.highlight_max(axis=0))
-        
-        soup = scrapping.Scrapper.main()
-        print(soup)
-        st.write(soup)
         
 
 if __name__ == '__main__':
